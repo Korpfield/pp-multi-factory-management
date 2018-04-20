@@ -22,29 +22,30 @@
     <div style="height:45px"></div>
     
     <!-- Cards container starts -->
+    {% for project in projects %}
     <div class="ui cards">
-        <div class="card">
-            <div class="content">
-                <i class="right floated mini ui image car icon"></i>
-                <div class="header">
-                    Project 1
+            <div class="card">
+                <div class="content">
+                    <i class="right floated mini ui image car icon"></i>
+                    <div class="header">
+                        {{ project.name }}    
+                    </div>
+                    <div class="description">
+                        <p>Progress {{ project.progress }} %</p>
+                        <p>Due date {{ project.dueDate }}</p>
+                        <p>{{ project.issues }} issues</p>
+                    </div>
                 </div>
-                <div class="meta">
-                    Progress 52 %
+                <div class="extra content">
+                <div class="ui two buttons">
+                    <div class="ui basic green button">Approve</div>
+                    <div class="ui basic red button">Decline</div>
                 </div>
-                <div class="description">
-                    Elliot requested permission to view your contact details
                 </div>
-            </div>
-            <div class="extra content">
-            <div class="ui two buttons">
-                <div class="ui basic green button">Approve</div>
-                <div class="ui basic red button">Decline</div>
-            </div>
             </div>
         </div>
-    </div>
-    <!-- Cards container starts -->
+        {% endfor %}
+        <!-- Cards container starts -->
 </body>
 </html>
 
